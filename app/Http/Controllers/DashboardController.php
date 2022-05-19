@@ -44,7 +44,7 @@ class DashboardController extends Controller
 
             if ($request->has('search')) {
                 if ($request->search == "") {
-                    $supervised_employees = $supervised_employees->orderBy('user_name', 'desc');            
+                    $supervised_employees = $supervised_employees->orderBy('user_name', 'asc');            
                 } else {
                     $search = $request->search;
     

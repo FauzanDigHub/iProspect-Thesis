@@ -143,7 +143,7 @@ class InternFreelancerController extends Controller
             if($request->timesheet_detail_ids != null){
                 for($j=0;$j < count($request->timesheet_detail_ids);$j++){
                     
-                    $old_timesheet_detail = TimesheetDetail::findOrFail($request->timesheet_detail_ids[$j]);
+                    $old_timesheet_detail                           = TimesheetDetail::findOrFail($request->timesheet_detail_ids[$j]);
                     $old_timesheet_detail->work_type_id             = $request->work_type_id[$j];
                     $old_timesheet_detail->work_description         = $request->work_description[$j];
                     $old_timesheet_detail->workinghours             = $request->workinghours[$j];

@@ -70,7 +70,7 @@
     <!-- IF THERE IS NO SUPERVISED EMPLOYEES -->
     @if(!count($timesheets))
         <div style="text-align:center">
-            <p class="px-24" style="margin-bottom:0.5vw">This employee have not submiited any timesheet..</p>
+            <p class="px-24" style="margin-bottom:0.5vw">This employee have not submited any timesheet..</p>
         </div>
         @endif
 </div>

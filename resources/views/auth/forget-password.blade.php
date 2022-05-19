@@ -64,7 +64,7 @@ Unauthorised or improper use of this system may result in disciplinary or legal 
                             </div>
                             <!-- END OF ONE INPUT -->
                             <div style="margin-top:2vw;text-align:center">
-                                <button class="btn-grey px-24" type="submit" style="width:auto">Send New Passord</button>
+                                <button class="btn-grey px-24" type="submit" style="width:auto">Send New Password</button>
                             </div>
                         </form>
                     </div>
