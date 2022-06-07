@@ -61,7 +61,7 @@ class InternFreelancerController extends Controller
             'total_working_hours' => 'required'
         ]);
         
-        dd($request->all());
+        //dd($request->all());
 
         if($request->submission_type == 'submit' || $request->submission_type == 'submit_from_draft'){
             $time_sheet_status = 'Waiting for Approval';

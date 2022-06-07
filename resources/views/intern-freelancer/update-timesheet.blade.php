@@ -81,7 +81,7 @@
                             <div>
                                 <p class="px-18" style="margin-bottom:0px;color:#3A8D1C;">Work Hours:
                                     <span class="px-24">
-                                        <input type="number" style="width:3vw;text-align:center" id="workhours">
+                                        <input type="number" min='0' style="width:3vw;text-align:center" id="workhours">
                                     </span>
                                 </p>
                             </div>
@@ -140,7 +140,7 @@
                             <div>
                                 <p class="px-18" style="margin-bottom:0px;color:#3A8D1C;">Work Hours:
                                     <span class="px-24">
-                                        <input type="number" style="width:3vw;text-align:center" value="{{$timesheetDetail->workinghours}}" required name="workinghours[]" id="workhours">
+                                        <input type="number" min='0' style="width:3vw;text-align:center" value="{{$timesheetDetail->workinghours}}" required name="workinghours[]" id="workhours">
                                         @error('workhours')
                                             <br>
                                             <strong class="px-18" style="color:red">{{ $message }}</strong>
@@ -164,7 +164,7 @@
             <!-- START OF TOTAL WORKING HOUR -->
             <div style="padding:1.5vw 5vw;background:#F1F1F1;margin-top:5vw;border-radius:1vw;">
                 <div style="text-align:right">
-                    <p class="px-18" style="margin-bottom:0px;color:#3A8D1C;">Total Working Hours: <span class="px-24"><input type="number" style="width:3vw;text-align:center" value="{{$timesheet->total_working_hours}}" name="total_working_hours" id="total_working_hours" required></span></p>
+                    <p class="px-18" style="margin-bottom:0px;color:#3A8D1C;">Total Working Hours: <span class="px-24"><input type="number" min='0' style="width:3vw;text-align:center" value="{{$timesheet->total_working_hours}}" name="total_working_hours" id="total_working_hours" required></span></p>
                     @error('total_working_hours')
                         <br>
                         <strong class="px-18" style="color:red">{{ $message }}</strong>
