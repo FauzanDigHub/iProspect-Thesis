@@ -128,9 +128,9 @@ input[type="file"] {
                         </div>
                         <div class="col-md-6 col-xs-12 p-0">
                             <div style="margin-top:1.5vw">
-                                <p class="px-24" style="font-weight:bold;color:#92D050;margin-bottom:0px" >Occupancy</p>
+                                <p class="px-24" style="font-weight:bold;color:#92D050;margin-bottom:0px" >Occupation</p>
                                 <input type="text" name="occupancy" class="px-24 w-100" 
-                                style="width:50%;padding:0vw 0.4vw" placeholder="Insert your occupancy" required
+                                style="width:50%;padding:0vw 0.4vw" placeholder="Insert your occupation" required
                                 value="{{auth()->user()->occupancy}}">
                                 <br>
                                 @error('occupancy')
@@ -158,7 +158,7 @@ input[type="file"] {
                             <input id="file-upload" accept=".jpeg,.jpg,.png" name='avatar' type="file" style="display:none;">
                             <br>
                             @error('avatar')
-                                <strong class="px-18" style="color:red">lorem</strong>
+                                <strong class="px-18" style="color:red">{{ $message }}</strong>
                             @enderror
                         </div>
                     </div>

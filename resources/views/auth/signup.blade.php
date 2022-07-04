@@ -82,9 +82,9 @@ Unauthorised or improper use of this system may result in disciplinary or legal 
 
                             <!-- START OF ONE INPUT -->
                             <div style="margin-top:1vw">
-                                <p class="px-24" style="margin-bottom:0.5vw">Occupancy</p>
+                                <p class="px-24" style="margin-bottom:0.5vw">Occupation</p>
                                 <input type="text" name="occupancy" class="px-24" 
-                                style="width:100%;padding:0vw 0.4vw" placeholder="Insert your occupancy" autofocus required
+                                style="width:100%;padding:0vw 0.4vw" placeholder="Insert your occupation" autofocus required
                                 value="{{old('occupancy')}}">
                                 @error('occupancy')
                                     <strong class="px-18" style="color:red">{{ $message }}</strong>
