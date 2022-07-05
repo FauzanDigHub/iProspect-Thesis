@@ -185,6 +185,12 @@
 
 <!-- START OF SCRIPT -->
 <script>
+
+// set that the user can only choose a date until the present day but not after the present day.
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("start_date")[0].setAttribute('max', today);
+document.getElementsByName("end_date")[0].setAttribute('max', today);
+//
 document.getElementById('add_timesheet_detail').onclick = duplicateRequirement;
 var i = 1;
 var original = document.getElementById('timesheet_detail_duplicator');
