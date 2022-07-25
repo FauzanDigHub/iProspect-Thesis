@@ -73,6 +73,7 @@ class Helper
             ->count() > 0;
     }
 
+    // ini function utk update status nya intern dan freelancer di UI supervisor dashboard
     public static function updateAssignEmployeeStatus($supervisor_id, $employee_id){
         $assigned_employee = DB::table('assigned_employees')
         ->where('user_id', $supervisor_id)
@@ -81,7 +82,7 @@ class Helper
         // here to check if the supervised intern has any timesheet pending for approval
         $isNeedApproval = Timesheet::where('user_id', $employee_id)
         ->where('time_sheet_status', 'Waiting for Approval')->count() > 0;
-        
+        // ini ngecek klo ada satu aja yg waiting for approval, dia akan update status nya ke need approval
         if($isNeedApproval){
             $assigned_employee->update(['status' => 'Need Approval']);
         }

@@ -14,10 +14,9 @@ class Timesheet extends Model
         'start_date',
         'end_date',
         'total_working_hours',
-        'status_id',
+        'time_sheet_status',
         'signed_by',
     ]; 
-
 
     public function user() {
         return $this->belongsTo(User::class);

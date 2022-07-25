@@ -60,8 +60,11 @@ class SupervisorController extends Controller
         return view('supervisor/employee-detail', compact('timesheets','user'));
     }
 
+    // if the supervisor approve or reject a timesheet
     public function updateTimeSheetStatus(Request $request){
         $timesheet = Timesheet::findOrFail($request->timesheet_id);
+
+        // merequest utk merubah status timesheet based on request, bisa approve or reject
         $timesheet->time_sheet_status = $request->update_type;
         
         if($request->update_type == 'In Progress'){
@@ -71,11 +74,14 @@ class SupervisorController extends Controller
         else{
             $timesheet->signed_by = auth()->user()->name;
             $timesheet->save();
-            $timesheet_link = route('timesheet-detail', $timesheet->id);
 
+           // prepare the link for the email notification
+            $timesheet_link = route('timesheet-detail', $timesheet->id);
+            // send email to employee
             Mail::to($timesheet->user->email)->send(new UpdateTimesheetStatusMail($timesheet_link,$request->update_type));
 
         }
+         // return to the page but with changed timesheet status
         return redirect()->back();
 
     }

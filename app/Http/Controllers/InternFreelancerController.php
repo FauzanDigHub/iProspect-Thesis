@@ -83,7 +83,7 @@ class InternFreelancerController extends Controller
         else{
             $timesheet                      = new Timesheet;
             $timesheet->user_id             = Auth::user()->id;
-        }
+        }// auth store logged in user credential, just for that user (name,password,email,id,all).
 
         $timesheet->start_date          = $validated['start_date'];
         $timesheet->end_date            = $validated['end_date'];
@@ -110,7 +110,7 @@ class InternFreelancerController extends Controller
                 }
                 //kalau misalkan masih ada sisa
                 else{
-                    //kalo existing timesheet detail gak ada di request terbaru, delete existing time sheet
+                    //kalo existing timesheet detail gak ada di request terbaru misal nomer 2, delete existing time sheet itu
                     if(!in_array($key->id,$request->timesheet_detail_ids)){
                         TimesheetDetail::where('id',$key->id)->delete();
                     }
